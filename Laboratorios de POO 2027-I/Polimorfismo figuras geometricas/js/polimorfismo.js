@@ -85,6 +85,32 @@ class TrianguloRectangulo extends Figura {
   }
 }
 
+class Trapecio extends Figura {
+  #baseMayor
+  #baseMenor
+  #altura
+  #lado1
+  #lado2
+  
+  constructor(baseMayor, baseMenor, altura, lado1, lado2) {
+    super("Trapecio")
+    this.#baseMayor = baseMayor
+    this.#baseMenor = baseMenor
+    this.#altura = altura
+    this.#lado1 = lado1
+    this.#lado2 = lado2
+  }
+
+
+  calcularArea() {
+    console.log(0.5 * (this.#baseMayor + this.#baseMenor) * this.#altura)
+  }
+
+  calcularPerimetro() {
+    console.log(this.#lado1 + this.#lado2 + this.#baseMayor + this.#baseMenor)
+  }
+}
+
 // ==========================================
 // 4: ZONA DE PRUEBAS
 const circulo = new Circulo(1)
@@ -92,6 +118,9 @@ circulo.calcularArea()
 
 const rectangulo = new Rectangulo(8, 3)
 rectangulo.calcularArea()
+
+const trapecio = new Trapecio(10, 6, 4, 5, 5)
+trapecio.calcularArea()
 
 const triangulo = new TrianguloRectangulo(3, 4)
 triangulo.calcularArea()
